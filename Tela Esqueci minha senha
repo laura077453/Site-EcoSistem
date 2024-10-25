@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+   <title> Introdução ao Lixo Eletrônico </title>
+</head>
+<body>
+    <fieldset>
+     <legend> <h2> Recuperação de Senha </h2> </legend>
+      <div id="texto senha">
+       <div id="senha">
+        <label> Senha: </label>
+        <input type="password"> 
+       </div>
+    <br>
+    <br>
+    <div id="confirmacao">
+        <label>Confirme sua Senha:</label>
+        <input type="password">
+    </div>
+    <br>
+    <br>
+    <div id="cadastrar">
+     <input type="button"> Cadastrar
+    </div>
+    <br>
+    <br>
+    <div id="voltar">
+        <a href="Tela Login.html"> Retornar ao Login </a>
+    </div>
+      </div>
+    </fieldset>
+</body>
