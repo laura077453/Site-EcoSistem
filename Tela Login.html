@@ -1,53 +1,195 @@
 <!DOCTYPE html>
 <head> 
     <meta charset="UTF-8">
-     <title> Introdução ao Lixo Eletrônico</title>
- <style>
-    .mae{
-    width: 400px;
-    padding-left: 600px;
-    align-items: center;
-    padding-top:200px;
- }
- </style>
+    <title>Introdução ao Lixo Eletrônico</title>
+    <style>
+        /* Definir a imagem de fundo do body */
+        body {
+            background-image: url(https://img.freepik.com/fotos-premium/3d-renderizacao-abstrato-geometrico-sem-costura-fundo-colorido-construtor-jogo-de-logica-mosaico-cubico-papel-de-parede-isometrico-estrutura-colorida-cubos_379823-3724.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container para centralizar o box */
+        .contain {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Box que contém o formulário de login */
+        .box {
+            border-radius: 10px;
+            padding: 30px;
+            width: 400px;
+            backdrop-filter: blur(17px);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Adiciona sombra para o efeito 3D */
+            background-color: rgba(255, 153, 0, 0.4); 
+            align-items: center;
+        }
+
+        /* Estilo do formulário de login */
+        .logingeral {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .email, #Senha {
+            margin-bottom: 10px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 95%;
+            padding: 11px; /* Aumenta o padding para um efeito mais confortável */
+            margin-top: 5px;
+            border-radius: 15px; /* Tornando os campos mais arredondados */
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+            justify-content: center;
+        }
+
+        /* Estilo para quando o campo de entrada estiver em foco */
+        input[type="email"]:focus, input[type="password"]:focus {
+            background-color: #34ADAD; /* Cor solicitada quando o campo é clicado */
+            border-color: #28AFAF; /* Uma borda mais escura para combinar */
+            outline: none; /* Remove o contorno padrão do navegador */
+        }
+
+        /* Estilo do checkbox "Recordar" */
+        .recoradar {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo do checkbox customizado */
+        .recoradar input[type="checkbox"] {
+            display: none; /* Oculta o checkbox padrão */
+        }
+
+        .recoradar label {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Criação do estilo do "checkbox" customizado */
+        .recoradar label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc; /* Cor do fundo do checkbox */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Quando o checkbox estiver marcado */
+        .recoradar input[type="checkbox"]:checked + label::before {
+            background-color: #27edd3; /* Cor de fundo quando marcado */
+            transform: scale(1.2); /* Aumenta o tamanho do checkbox quando marcado */
+        }
+
+        /* Estilo do "check" dentro do checkbox customizado */
+        .recoradar input[type="checkbox"]:checked + label::after {
+            content: '✔'; /* O símbolo de check */
+            position: absolute;
+            left: 4px;
+            top: 0px;
+            font-size: 16px;
+            color: rgb(119, 0, 255); /* Cor do "check" dentro do box */
+        }
+
+        /* Estilo do botão "Entrar" */
+        .entrar button {
+            padding: 10px;
+            background-color: #FFBA53;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .entrar button:hover {
+            background-color: #ff9d2d;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-return {
+            background-color: #28a745;
+            margin-top: 17px;
+            text-align: center;
+            padding: 10px;
+            background-color: #FFBA53;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
+            font-size: 18px;
+
+        }
+
+        .btn-return:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-       <div class="mae">
-   <fieldset>
-    <legend> Login </legend>
+    <div class="contain">
+        <div class="box">
+            <h2>Login</h2>
 
-    <div class="logingeral">
-       <div class="email">
-        <label> Email: </label>
-        <input type="email" autocomplete="off">
+            <div class="logingeral">
+                <div class="email">
+                    <label>Email:</label>
+                    <input type="email" autocomplete="off">
+                </div>
+                <br>
+                <div id="Senha">
+                    <label>Senha:</label>
+                    <input type="password">
+                </div>
+                <br>
+                <div class="recoradar">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Recordar Email e Senha</label>
+                </div>
+                <br>
+                <div class="entrar">
+                    <button>Entrar</button>
+                </div>
+                <br>
+                <a href="Esqueci minha senha.html">Esqueci minha Senha</a>
+                <br>
+                <label>Ainda não tem conta?</label> <a href="Tela Cadastro.html">Crie uma!</a>
+            </div>
+
+            <br>
+            <div class="btn-return">
+                <a href="Tela Inicial.html">Retornar à Tela Inicial</a>
+            </div>
         </div>
-       <br>
-       <br>
-        <div id="Senha">
-        <label> Senha:</label>
-        <input type="password">
-        </div>
-        <br>
-        <br>
-        <div class="recoradar">
-        <input type="checkbox"> Recordar Email e Senha </input>
-        </div>
-        <br>
-        <div class="entrar">
-            <button> Entrar </button>
-        </div>
-         <br>
-        <a href="Esqueci minha senha.html"> Esqueci minha Senha</a>
-        <br>
-        <label>Ainda não tem conta?</label> <a href="Tela Cadastro.html"> Crie uma!</a>
     </div>
-    <br>
-    <br>
-    <div id="Voltar" >
-        <a href="Tela Inicial.html"> Retornar a Tela Inicial</a>
-    </div>
-   </fieldset>
-</div>
-  
 </body>
 </html>
