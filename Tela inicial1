@@ -8,6 +8,8 @@
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>  
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <style>  
         
         .slider-content {
@@ -298,16 +300,22 @@
              font-size: 26px; 
 
         } 
-                .container-letreiro{
-           background-color: #EAFFF3; 
-           margin: auto;
-           width: 1300px;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           height: 90px;
-           border-radius: 25px;
-
+            .container-letreiro {
+        background-color: #EAFFF3; 
+        margin: auto;
+        width: 1300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        border-radius: 25px;
+         }
+         .integrantes {
+            color: #1D995D; /* Cor especificada */
+            font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+            font-weight: bold; /* Negrito */
+            font-style: italic; /* Itálico */
+            font-size: 36px; /* Tamanho da fonte (ajuste conforme necessário) */
         }
     </style>  
 </head>  
@@ -333,10 +341,10 @@
             <button class="login-button">Faça Login</button>
         </nav>
     </header>
-      <!--Parte do letreiro, sobre nós-->
+     <!--Parte do letreiro, sobre nós-->
     <div class="container-letreiro">
-      <p class="integrantes">CONHEÇA OS INTEGRANTES</p>
-    </div>
+        <p class="integrantes">CONHEÇA OS INTEGRANTES</p>
+     </div>
    <!--Sliders-->
     <div class="wrapper">
         <div class="center-slider">
