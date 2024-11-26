@@ -252,13 +252,14 @@
     width: 900px;
     text-align: justify; /* Justifica o texto para que ele ocupe toda a largura disponível */
     padding-top: 60px; /* Ajusta o espaço acima da imagem */
-    border: 1px solid #ccc;
+    border: 1px solid #002b12;
     margin: 20px auto;
     overflow: visible;
     padding-left: 50px;
     padding-right: 50px; /* Aumenta o padding direito para que o texto se ajuste igualmente */
     border-radius: 14px;
-    background-color: #5555ff;
+    background: rgb(3,0,14);
+    background: linear-gradient(360deg, rgba(3,0,14,0.9808298319327731) 0%, rgba(19,57,60,1) 35%, rgba(86,157,163,1) 100%);
     color: #ffffff;
     white-space: normal; /* Garante que o texto quebre conforme necessário */
     display: flex;
@@ -277,7 +278,6 @@
     .imagem-secundaria {
         width: 140px; /* Tamanho da imagem secundária */
         height: auto;
-        box-shadow: #000000;
         position: absolute; /* A imagem será posicionada em relação ao container */
         top: 0; /* Posiciona no topo do container */
         left: 0; /* Posiciona no canto esquerdo do container */
@@ -291,7 +291,90 @@
         margin-top: 70px; /* Espaçamento entre a imagem e a data */
         text-align: center; /* Centraliza a data abaixo da imagem */
     }
+    /* Estilo 
+                /* Estilo geral do footer */
+                footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center; /* Centraliza o texto no footer */
+        }
 
+        /* Container para alinhar as colunas */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Distribui o espaço igualmente */
+            align-items: flex-start; /* Alinha no topo */
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap; /* Permite que as colunas se ajustem em telas pequenas */
+        }
+
+        /* Estilo de cada coluna */
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin: 0 20px;
+        }
+
+        /* Logo */
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo dos títulos das colunas */
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo dos links das redes sociais */
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-column ul li a:hover {
+            color: #FFAC31;
+        }
+
+        /* Estilo das informações de contato e endereço */
+        .footer-column p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        /* Estilo do texto de copyright */
+        .footer-text {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #bbb; /* Um tom mais suave de branco */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        }
 </style>
 <body>
     <!-- HEADER -->
@@ -463,5 +546,40 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="footer-container">
+        <!-- Coluna 1: Logo -->
+        <div class="footer-column">
+            <img src="assets/E.png" alt="Logo" class="footer-logo">
+        </div>
+
+        <!-- Coluna 2: Redes Sociais -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Endereço -->
+        <div class="footer-column">
+            <h3>Endereço</h3>
+            <p>Praça Miguel Ortega, 135 - Parque Assuncao</p>
+            <p>Taboão da Serra, São Paulo</p>
+            <p>CEP: 12345-678</p>
+        </div>
+
+        <!-- Coluna 4: Contato -->
+        <div class="footer-column">
+            <h3>Contato</h3>
+            <p>Email: exemplo@dominio.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </div>
+    </div>
+    <!-- Texto de copyright -->
+    <p class="footer-text">Ecosystem®, 2024. Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>
