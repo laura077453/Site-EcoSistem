@@ -151,11 +151,11 @@
 
         /* Estilos da seção com imagem de fundo */
         .imagem {
-            background-image: url("imagens/fundo.jpeg");
-            background-size: cover; /* A imagem cobrirá toda a área da div */
+            background-image: url(""); /* Caminho da sua imagem */
+            background-size: cover; /* Garante que a imagem cubra toda a área da div */
             background-position: center; /* Centraliza a imagem */
-            height: 722px; 
-            width: 100%; /* A seção ocupa 100% da largura da tela */
+            height: 722px;  /* Defina uma altura para a div */
+            width: 100%;  /* A seção ocupa 100% da largura da tela */
         }
 
         /** Header **/ 
@@ -309,14 +309,62 @@
         align-items: center;
         height: 90px;
         border-radius: 25px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.658);
          }
+
          .integrantes {
             color: #1D995D; /* Cor especificada */
             font-family: 'Poppins', sans-serif; /* Fonte Poppins */
             font-weight: bold; /* Negrito */
             font-style: italic; /* Itálico */
+            text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.301);
             font-size: 36px; /* Tamanho da fonte (ajuste conforme necessário) */
         }
+
+        .container-row {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #5555ff;
+            border-radius: 13px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.705);
+        }
+
+        .column {
+            width: 23%;
+            text-align: center;
+        }
+
+        .column img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+        }
+
+        .column p {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+    /* Clear floats after the columns  */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    /* Layout responsivo - faz as quatro colunas empilharem umas sobre as outras em vez de ao lado de cada uma*/
+    @media screen and (max-width: 600px) {
+        .column {
+        width: 100%;
+        }
+    }
     </style>  
 </head>  
 <body>  
@@ -382,8 +430,16 @@
                 </p>
             </div>
             <div class="slider-content">
-                <img src="https://via.placeholder.com/150" alt="Imagem 5">
-                <p>Texto para o Slide 5</p>
+                <img src="assets/Laura.jpg" alt="Imagem 5">
+                <p>Laura
+                    <br>
+                    <br>
+                    Oi, meu nome é Laura,
+                    tenho 15 anos, gosto de  
+                    praticar esportes como o 
+                    jiu-jitsu e também gosto muito
+                    de assistir filmes e séries.
+                </p>
             </div>
             <div class="slider-content">
                 <img src="https://via.placeholder.com/150" alt="Imagem 6">
@@ -391,6 +447,27 @@
             </div>
         </div>
     </div>
+
+    <section class="container-row">
+        <div class="column">
+            <img src="img1.jpg" alt="Integrante 1">
+            <p>Integrante 1</p>
+        </div>
+        <div class="column">
+            <img src="img2.jpg" alt="Integrante 2">
+            <p>Integrante 2</p>
+        </div>
+        <div class="column">
+            <img src="img3.jpg" alt="Integrante 3">
+            <p>Integrante 3</p>
+        </div>
+        <div class="column">
+            <img src="img4.jpg" alt="Integrante 4">
+            <p>Integrante 4</p>
+        </div>
+    </section>
+
+
     <footer>
         <div class="footer-container">
             <!-- Coluna 1: Logo -->
@@ -430,19 +507,19 @@
 </body> 
 
 <script> 
-       $(document).ready(function(){ 
-            $('.center-slider').slick({ 
-                slidesToShow: 5, 
-                slidesToScroll: 1, 
-                centerMode: true, 
-                arrows: true, 
-                dots: false, 
-                speed: 300, 
-                centerPadding: '20px', 
-                infinite: true, 
-                autoplaySpeed: 5000, 
-                autoplay: true 
-            }); 
-        }); 
+      $(document).ready(function() {
+    $('.center-slider').slick({
+        slidesToShow: 5,         // Quantos slides mostrar ao mesmo tempo
+        slidesToScroll: 1,       // Quantos slides irão mover por vez
+        centerMode: true,        // Ativa o modo centralizado
+        arrows: true,            // Exibe as setas de navegação
+        dots: false,             // Desativa os pontos de navegação
+        speed: 300,              // Velocidade da transição
+        centerPadding: '20px',   // Distância entre os slides centrais
+        infinite: true,          // Habilita loop infinito
+        autoplaySpeed: 5000,     // Velocidade do autoplay (5 segundos)
+        autoplay: true           // Habilita autoplay
+    });
+});
 </script> 
 </html>
