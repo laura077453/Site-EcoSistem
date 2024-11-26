@@ -24,8 +24,8 @@
     .slider-content img {
         max-width: 50%;
         border-radius: 40px;
-        height: 80px; /* Mantém a proporção da imagem */
-        width: 90px;
+        height: 100px; /* Mantém a proporção da imagem */
+        width: 100px;
         margin-bottom: 30px;
         margin-top: 1px; /* Afastando a imagem do texto */
         transition: all 0.3s ease; /* Adiciona uma transição suave para todos os efeitos */
@@ -151,7 +151,7 @@
 
         /* Estilos da seção com imagem de fundo */
         .imagem {
-            background-image: url(""); /* Caminho da sua imagem */
+            background-image: url("");
             background-size: cover; /* Garante que a imagem cubra toda a área da div */
             background-position: center; /* Centraliza a imagem */
             height: 722px;  /* Defina uma altura para a div */
@@ -303,11 +303,11 @@
             .container-letreiro {
         background-color: #EAFFF3; 
         margin: auto;
-        width: 1300px;
+        width: 1200px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 90px;
+        height: 80px;
         border-radius: 25px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.658);
          }
@@ -323,7 +323,7 @@
 
         .container-row {
             width: 100%;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 50px 0;
             display: flex;
@@ -376,19 +376,22 @@
             <!-- LINKS -->
             <ul id="nav_list">
                 <li class="nav-item">
-                    <a href="iii.html">Início</a>
+                    <a href="Home.html">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="ElementosPb.html">Elementos químicos/ artigo</a> 
+                    <a href="ElementosCA.html">Elementos químicos/ artigo</a> 
                 </li>
                 <li class="nav-item">
                     <a href="Jogo.html">Jogo</a>
                 </li>
             </ul>
                 <!-- BOTÃO FAÇA LOGIN -->
-            <button class="login-button">Faça Login</button>
+            <button class="login-button" href="login.html"> Faça Login</button>
         </nav>
     </header>
+    <br>
+    <br>
+    <br>
      <!--Parte do letreiro, sobre nós-->
     <div class="container-letreiro">
         <p class="integrantes">CONHEÇA OS INTEGRANTES</p>
@@ -397,23 +400,36 @@
     <div class="wrapper">
         <div class="center-slider">
             <div class="slider-content">
-                <img src="https://via.placeholder.com/150" alt="Imagem 1">
-                <p>Texto para o Slide 1</p>
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTywbqgprCKtyuvQjcXvaY4myrl7m4ffauhTQMqV4CzZCQ90RWy" alt="Imagem 1">
+                <p>Leonardo
+                    <br>
+                    <br>
+                    Olá, meu nome é Leonardo,
+                    tenho 16 anos, moro em São Paulo
+                    gosto de história, videogmaes, escrever narrativas 
+                    e ás vezes desenhar. No futuro planejo publicar uma 
+                    HQ (se tudo der certo).
+                </p>
             </div>
             <div class="slider-content">
-                <img src="https://via.placeholder.com/150" alt="Imagem 2">
-                <p>Texto para o Slide 2</p>
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRJORPJMrtS2oK3OKiL9Nfi-PN1Dr3wqRjK7zEWyxtpZhf_SaWm" alt="Imagem 2">
+                <p>Stella
+                    <br>
+                    <br>
+                    Olá, me chamo Stella, gosto muito de gatinhos fofinhos 
+                    e de filmes e jogos de terror. Meus passatempos são desenhar 
+                    e fazer jiu-jitsu.
+                </p>
             </div>
             <div class="slider-content">
                 <img src="assets/Jullia.jpg" alt="Imagem 3">
                 <p>Jullia
                     <br>
                     <br>
-                    Me chamo Jullia. Tenho 16 
-                    anos, desenvolvedora de 
-                    CSS do nosso site. 
+                    Me chamo Jullia. Tenho 16 anos de idade, 
+                    desenvolvedora de CSS do nosso site. 
                     Curto pokémon, arte, biologia
-                    tecnologia e ursos.</p>
+                    tecnologia, astronomia e ursos.</p>
             </div>
             <div class="slider-content">
                 <img src="assets/Mariana.jpg" alt="Imagem 4">
@@ -430,7 +446,7 @@
                 </p>
             </div>
             <div class="slider-content">
-                <img src="assets/Laura.jpg" alt="Imagem 5">
+                <img src="assets/Laura.png" alt="Imagem 5">
                 <p>Laura
                     <br>
                     <br>
@@ -442,8 +458,15 @@
                 </p>
             </div>
             <div class="slider-content">
-                <img src="https://via.placeholder.com/150" alt="Imagem 6">
-                <p>Texto para o Slide 6</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0CPQ2M3NIIESoNh1VR4PAJlkktTz9ZqhdzJCBGBg8dVYdEAGO" alt="Imagem 6">
+                <p>Manuela
+                    <br>
+                    <br>
+                    Meu nome é Manuela e tenho 15 anos.
+                    Gosto muito de praticar esportes, cozinhar, 
+                    assistir filmes e séries e principalmente me divertir 
+                    com meus amigos e familiares.
+                </p>
             </div>
         </div>
     </div>
@@ -466,8 +489,10 @@
             <p>Integrante 4</p>
         </div>
     </section>
-
-
+    <br>
+    <br>
+    <br>
+    <br>
     <footer>
         <div class="footer-container">
             <!-- Coluna 1: Logo -->
