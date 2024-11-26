@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+ /** Header **/ 
+ * { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            box-sizing: border-box; 
+        } 
+        header { 
+            width: 100%; 
+            padding: 10px 5%; 
+            position: sticky; 
+            display: flex;
+            top: 0; 
+            background-color: #daf7ef; 
+            z-index: 10; /* Aumente o valor para garantir que fique acima do slider */
+            justify-content: space-between;  /* Coloca o logo à esquerda e o botão à direita */
+            align-items: center; 
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+        } 
+
+        #navbar { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            background-color: transparent;
+            height: 42px;
+            width: 100%;      
+        }
+
+        #navbar #nav_logo { 
+            font-size: 12px; 
+            color: #FFAC31; 
+        }
+
+        #nav_list { 
+            display: flex; 
+            gap: 47px; 
+            list-style: none; 
+        }
+
+        .nav-item a { 
+            text-decoration: none; 
+            color:#c58526; 
+            font-weight: 600; 
+        } 
+
+        .nav-item:hover { 
+            cursor: pointer;
+            background-color: #f1fcf9;
+            border-radius: 10px;
+            padding: 10px 10px;
+            font-weight: 600;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+            transform: scale(1.05); /* Leve aumento de tamanho sem causar deslocamento */
+          
+        } 
+         /* Estilos do botão "Faça Login" */
+         .login-button {
+            padding: 9px 8px;
+            border-color: #5555ff;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #5555ff;
+            background-color: transparent;
+            transition: background-color 0.3s;
+        }
+         /* Efeito ao passar o mouse sobre o botão */
+         .login-button:hover {
+            background-color: #beecea;
+        }
+        body { 
+            background-color: #082527; 
+            margin: 0; /* Remover o espaço superior */
+        } 
+            /* Container principal para o tabuleiro e conteúdo */
+            .containerINI {
+            display: flex;
+            align-items: center; /* Alinha os itens verticalmente no centro */
+            justify-content: space-between; /* Espaça os elementos (tabuleiro à esquerda, conteúdo à direita) */
+            background: #E3E3E3;
+            padding: 50px; /* Reduzi o padding para evitar excesso de espaço */
+            height: 500px;
+            box-sizing: border-box; /* Garante que padding não afete o tamanho do container */
+        }
+
+        /* Estilo do tabuleiro à esquerda */
+        .Tabuleiro img {
+            width: 800px; /* Ajusta o tamanho da imagem para caber no container */
+            height: auto;
+            max-width: 700px; /* Limita o tamanho da imagem para não ultrapassar o limite */
+        }
+
+        /* Container de texto à direita */
+        .Texto {
+            flex: 1; /* O conteúdo à direita vai ocupar o espaço restante */
+            color: #032716; /* Cor do texto */
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+            max-width: 500px; /* Limita a largura do texto */
+            display: flex;
+            flex-direction: column; /* Empilha o texto e o botão verticalmente */
+            justify-content: center; /* Alinha o conteúdo no centro vertical */
+            padding: 20px; /* Adiciona padding para não colar o texto nas bordas */
+        }
+
+        /* Estilo do botão */
+        .btn-inicial {
+        display: block;
+        width: 200px;
+        padding: 10px;
+        background: linear-gradient(90deg, #FDFBFB, #ED9E27); /* Gradiente aplicado corretamente */
+        color: #032716; /* Cor do texto do botão */
+        border: none;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px 95px 0; /* Centraliza o botão */
+    }
+
+    .btn-inicial:hover {
+        background: #ffbd07; /* Alteração da cor ao passar o mouse */
+        color: white;
+    }
+
+        /* Responsividade: para telas menores */
+        @media (max-width: 768px) {
+            .containerINI {
+                flex-direction: column; /* Torna o layout vertical em telas pequenas */
+                padding: 20px;
+            }
+
+            .Tabuleiro img {
+                max-width: 100%; /* Ajusta a imagem para caber melhor */
+            }
+
+            .Texto {
+                max-width: 100%; /* Ajusta o conteúdo à largura da tela */
+            }
+        }
+
+        .Texto p {
+            margin-bottom: 20px; /* Espaçamento entre o texto e o botão */
+        }
+
+        /* Logo ou imagem da fonte 1 */
+        .fonte1 {
+            width: 100px; /* Ajuste de tamanho para a imagem da logo */
+            margin-bottom: -16px;
+            color: #FFA51E;
+            font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+            font-weight: bold; /* Negrito */
+            font-size: 65px;
+
+        }
+        .fonte2{
+            margin-bottom: 9px;
+            color: #754703;
+            font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+            font-weight: bold; /* Negrito */
+            font-size: 29px; 
+            font-style: italic; /* Itálico */
+        }
+        .Tabuleiro {
+            order: 2; /* Faz com que o tabuleiro vá para a direita */
+        }
+
+        .Texto {
+            order: 1; /* Faz com que o texto vá para a esquerda */
+        }
+
+    /** aqui temos o container separado apenas para a roleta**/
+
+    .container {
+        width: 100%;
+        height: 900px;
+        position: static;
+    }
+
+    /**parte das características**/
+    .container-row {
+        width: 80%;
+        height: 450px;
+        position: static;
+        padding-left: 10%;
+        padding-top: 3%;
+        border-radius: 80px;
+        background-color: rgb(227, 171, 124);
+        margin-left: 160px;
+    }
+    /* Cria quatro colunas iguais que flutuam uma ao lado da outra */
+.column {
+    float: left;
+    width: 100px;
+    box-sizing: border-box;
+    padding: 100px;
+    row-gap: 200px;
+    position: static;
+  }
+  
+  /* Clear floats after the columns  */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Layout responsivo - faz as quatro colunas empilharem umas sobre as outras em vez de ao lado de cada uma*/
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+  /**colunas toxidade**/
+  .column-tx {
+    float: left;
+    height: 700px;
+    width: 50%;
+    padding: 200px;
+    background-color: #408e67;
+    position: static;
+  }
+  .column-txt{
+    float: left;
+    width: 50%;
+    height: 700px;
+    padding: 100px;
+    position: static;
+    background-color: rgb(171, 183, 42);
+  }
+  .row-tx:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .container12 {
+    width: 900px;
+    text-align: justify; /* Justifica o texto para que ele ocupe toda a largura disponível */
+    padding-top: 60px; /* Ajusta o espaço acima da imagem */
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    overflow: visible;
+    padding-left: 50px;
+    padding-right: 50px; /* Aumenta o padding direito para que o texto se ajuste igualmente */
+    border-radius: 14px;
+    background-color: #5555ff;
+    color: #ffffff;
+    white-space: normal; /* Garante que o texto quebre conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    padding-bottom: 50px;
+    position: relative; /* Para permitir que os elementos internos usem posições absolutas em relação a esse container */
+    }
+
+    .imagem-principal {
+        width: 300px; /* Tamanho ajustado para a imagem principal */
+        height: auto;
+        margin-top: -50px; /* Ajuste a margem para que a imagem fique mais distante do texto */
+    }
+
+    .imagem-secundaria {
+        width: 140px; /* Tamanho da imagem secundária */
+        height: auto;
+        box-shadow: #000000;
+        position: absolute; /* A imagem será posicionada em relação ao container */
+        top: 0; /* Posiciona no topo do container */
+        left: 0; /* Posiciona no canto esquerdo do container */
+        margin-top: 10px; /* Remove a margem superior para alinhar com a borda */
+        margin-left: 10px; /* Remove a margem à esquerda para alinhar com a borda */
+    }
+
+
+    .data {
+        font-size: 1em; /* Tamanho menor para a data */
+        margin-top: 70px; /* Espaçamento entre a imagem e a data */
+        text-align: center; /* Centraliza a data abaixo da imagem */
+    }
+
+</style>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav id="navbar">
+            <!-- LOGO -->
+            <img src="https://img.freepik.com/vetores-premium/logotipo-da-letra-c-e-logotipos-de-empresas-de-modelo-de-design-moderno_526811-607.jpg" width="60" height="70">
+            <!-- LINKS -->
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a href="Início.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Elementos.html">Elementos químicos</a> 
+                </li>
+                <li class="nav-item">
+                    <a href="Jogo.html">Jogo</a>
+                </li>
+            </ul>
+            <!-- BOTÃO FAÇA LOGIN -->
+            <button class="login-button">Faça Login</button>
+        </nav>
+    </header>
+
+
+        <!-- Container que agrupa o conteúdo e o tabuleiro -->
+    <div class="containerINI">
+            <!--Imagem do tabuleiro à esquerda-->
+            <div class="Tabuleiro">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn1DhFmV-_t7ShS6D9Pj1rJn4vq_AQoYyA_A&s" alt="Tabuleiro">
+            </div>
+    
+            <!-- Conteúdo à direita (texto, logo e botão) -->
+            <div class="Texto">
+                <div class="fonte1">
+                    <p>CONFIRA</p>
+                </div>
+                <div class="fonte2">
+                    <p>Nosso artigo científico</p>
+                </div>
+                <p>  
+                    Nós da Etec de Taboão da Serra produzimos um artigo científico sobre os efeitos do descarte incorreto de lixo eletrônico no meio ambiente. 
+                    Esse artigo foi redigido com a ajuda dos nossa professora orientadora de LIC (Laboratório de Investigação Científica) e serviu como grande inspiração,
+                    desafio e aprendizado para nossa equipe. O artigo tem cerca de 15 páginas e está formatado de acordo com as normas ABNT.
+                </p>
+                <button class="btn-inicial">Compre agora</button>
+            </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Parte das características e roleta -->
+    <div class="container">
+        <div class="container12"> 
+
+            <img src="imagens/Captura_de_tela_2024-11-26_090919-removebg-preview.png"> 
+    
+            <h2 class="titulo">CHUMBO</h2> 
+    
+            <p class="texto">--Ecosystem  
+                <br> 
+                <br>
+
+                O chumbo é um elemento químico da tabela periódica. 
+                É um metal pesado sólido e de cor cinza-azulada, o chumbo é 
+                facilmente maleável, contudo, não é um dos melhores condutores
+                de eletricidade. Este minério é considerado um metal tóxico. 
+                É documentado que a peça mais antiga de chumbo já criada pelos
+                seres humanos foiem 3.800 a.C. Esta peça está localizada no Museu
+                Britânico de Londres e existem diversos registros que povos orientais 
+                como os chineses já utilizavam o metal. Há também passagens bíblicas 
+                no livro “Êxodo” que faz menção ao elemento. 
+                "Sopraste com o teu vento, o mar os cobriu; afundaram-se como chumbo em veementes águas.” (Êxodo 15:10) 
+
+            </p> 
+    
+            <img src="imagens/Captura_de_tela_2024-11-26_093941-removebg-preview.png" alt="Imagem Secundária" class="imagem-secundaria"> 
+            <p class="data">26 Dez. 2024</p> <!-- Agora a data está abaixo da imagem secundária --> 
+    
+        </div>   
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-row">
+        <div class="row">
+            <div class="column">
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90">
+                <p>Namet6y7<br>u679klkko</p>
+            </div>
+            <div class="column">
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90">
+                <p>Namey789</p>
+            </div>
+            <div class="column">
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90" >
+                <p>Namejy8çt</p>
+            </div>
+            <div class="column">
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90" >
+                <p>Nametgygyt9iy<br>fyhfdrrfyh</p>
+            </div>
+         </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- PARTE DE TOXICIDADE DOS ELEMENTOS -->
+    <div class="container-tx">
+        <div class="row-tx">
+            <div class="column-tx">
+                <p>stdrtgertdyhrthyrtyh</p>
+                <br>
+                <br>
+                <img src="https://w7.pngwing.com/pngs/105/22/png-transparent-biological-hazard-hazard-symbol-sign-symbol-miscellaneous-triangle-desktop-wallpaper-thumbnail.png" width="400" height="300">
+                <p>Namey78yt7,lkyhu9</p>
+            </div>
+            <div class="column-txt">
+                <br>
+                <br>
+                <br>
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90" >
+                <br>
+                <br>
+                <ul id="tx_list">
+                    <li>
+                        <p>Metil</p>
+                    </li>
+                    <li>
+                        <p>Contaminação</p>
+                    </li>
+                </ul>
+
+                <br>
+                <br>
+
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90" >
+                
+                <ul id="jg-list">
+                    <li>
+                        <p>Forma de contaminação</p>
+                    </li>
+                    <li>
+                        <p>Sintomas</p>
+                    </li>
+                </ul>
+                <br>
+                <br>
+
+                <img src="https://img.freepik.com/vetores-gratis/coracao_78370-492.jpg?size=338&ext=jpg&ga=GA1.1.1707466627.1728864000&semt=ais_hybrid" width="90" height="90" >
+                
+                <ul id="jg-list">
+                    <li>
+                        <p>Forma de contaminação</p>
+                    </li>
+                    <li>
+                        <p>Sintomas</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
